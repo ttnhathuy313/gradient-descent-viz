@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from math_function import Function
+from math_function import Function, TwoVariableFunction
 
 # Plot the function
 def plot_function(f, x):
@@ -24,7 +24,7 @@ def plot_changes(f, x, old_x, new_x, title='', show=False):
 
     # plot the function
     y = f.value(x)
-    plt.plot(x,y, color='black')
+    plt.plot(x, y, color='black')
     plt.title(title)
     # Draw the old point as a red dot
     plt.plot(old_x, old_y, 'gray', marker='o', markersize=5)
@@ -38,3 +38,15 @@ def plot_changes(f, x, old_x, new_x, title='', show=False):
     if (show):
         plt.show()
 
+def plot_function_contour(f, x, y):
+    # Plot the function using contour graph from matplotlib
+    X, Y = np.meshgrid(x, y)
+    Z = f.value(X, Y)
+    plt.contourf(X, Y, Z, 100, cmap='RdGy')
+    plt.colorbar()
+    plt.show()
+
+f = TwoVariableFunction()
+x = np.linspace(-30, 30, 300)
+y = np.linspace(-30, 30, 300)
+plot_function_contour(f, x, y)

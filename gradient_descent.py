@@ -12,9 +12,10 @@ def gradient_descent_process(starting_point, learning_rate, precision, max_itera
     # Create a Function object: f
     f = Function()
     # Use linspace to sample 100 x values between -10 and 10
-    x = np.linspace(-5, 5, 100)
+    x = np.linspace(-10, 10, 100)
     # Plot the function
-    plot_function(f, x)
+    # plot_function(f, x)
+
 
     # Iterate until the change in x is less than precision or we hit the maximum number of iterations
     while True:
@@ -31,7 +32,7 @@ def gradient_descent_process(starting_point, learning_rate, precision, max_itera
         # Print out the new x value
         print("x_new:", x_new)
         # Plot the function and new x value
-        plot_changes(f, x, x_old, x_new, "" + str(i))
+        plot_changes(f, x, x_old, x_new, str(i))
         # Check if the difference between the old x and new x is less than precision
         if abs(x_new - x_old) < precision:
             print("Precision reached!")
@@ -46,4 +47,4 @@ def gradient_descent_process(starting_point, learning_rate, precision, max_itera
         i += 1
     create_gifs()
 
-gradient_descent_process(starting_point=3, learning_rate=0.2, precision=0.000001, max_iterations=100)
+gradient_descent_process(starting_point=8, learning_rate=0.3, precision=0.000001, max_iterations=100)
