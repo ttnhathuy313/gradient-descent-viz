@@ -10,7 +10,7 @@ Step 4: Try to learn something from it
 
 ## What have I done?
 
-You are given the class for 2-variable function. I also provide some code to plot the graph as a 2D contour graph.
+You are given the class for 2-variable function. I also provide some code to plot the graph as a 2D contour graph (kindly find in `function_plot.py`).
 
 ## What do you need to do?
 
