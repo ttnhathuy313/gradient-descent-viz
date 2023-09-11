@@ -11,8 +11,6 @@ def create_gifs():
     # Combine all images in graphs folder into a gif
     images = []
     for filename in os.listdir('./graphs'):
-        images.append((filename, imageio.imread('./graphs/' + filename)))
-    # sort the images based on number in filename
-    images = sorted(images, key=lambda x: int(x[0].split('.')[0]))
-    images = [image[1] for image in images]
-    imageio.mimsave('./animation.gif', images, duration=50)
+        file_path = os.path.join('./graphs', filename)
+        images.append(imageio.imread(file_path))
+    imageio.mimsave('./animation.gif', images, duration=0.5)
