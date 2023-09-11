@@ -13,4 +13,4 @@ def create_gifs():
     for filename in os.listdir('./graphs'):
         file_path = os.path.join('./graphs', filename)
         images.append(imageio.imread(file_path))
-    imageio.mimsave('./graphs/gradient_descent.gif', images, duration=0.5)
+    imageio.mimsave('./animation.gif', images, duration=0.5)

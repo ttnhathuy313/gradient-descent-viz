@@ -38,4 +38,3 @@ class TwoVariableFunction:
         f_x = lambdify([self.x, self.y], self.derivative_x, 'numpy')
         f_y = lambdify([self.x, self.y], self.derivative_y, 'numpy')
         return np.array([f_x(x, y), f_y(x, y)])
-
