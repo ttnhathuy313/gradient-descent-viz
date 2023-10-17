@@ -24,7 +24,7 @@ class TwoVariableFunction:
     def __init__(self):
         self.x = Symbol('x')
         self.y = Symbol('y')
-        self.function = self.x ** 2 * self.y + sin(self.y) + 1
+        self.function = (10 * self.x ** 2 + self.y ** 2) / 2
         self.derivative_x = self.function.diff(self.x)
         self.derivative_y = self.function.diff(self.y)
     

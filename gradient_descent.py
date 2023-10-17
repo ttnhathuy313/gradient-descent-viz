@@ -68,14 +68,6 @@ def gradient_descent_two_variables_process(f, x, y, starting_point, learning_rat
     while True:
         # Print out the number of the current iteration
         print("Iteration:", i)
-        if (x_old < x[0]):
-            x_old = x[0]
-        elif (x_old > x[-1]):
-            x_old = x[-1]
-        if (y_old < y[0]):
-            y_old = y[0]
-        elif (y_old > y[-1]):
-            y_old = y[-1]
 
         # Print out the old x value
         print("x_old:", x_old)
@@ -96,11 +88,7 @@ def gradient_descent_two_variables_process(f, x, y, starting_point, learning_rat
         # Plot the function and new x value
         plot_changes_two_variables(f, x, y, x_old, y_old, x_new, y_new, str(i))
         # Check if the difference between the old x and new x is less than precision
-        if abs(x_new - x_old) < precision:
-            print("Precision reached!")
-            break
-        # Check if the difference between the old y and new y is less than precision
-        if abs(y_new - y_old) < precision:
+        if np.sqrt((x_new-x_old)**2 + (y_new-y_old)**2) < precision:
             print("Precision reached!")
             break
         # Check if we've exceeded the maximum number of iterations
@@ -116,6 +104,6 @@ def gradient_descent_two_variables_process(f, x, y, starting_point, learning_rat
     create_gifs()
 
 f = TwoVariableFunction()
-x = np.linspace(-10, 10, 100)
-y = np.linspace(-10, 10, 100)
-gradient_descent_two_variables_process(f, x, y, [1, -5], 0.1, 0.00001, 20)
+x = np.linspace(-30, 30, 100)
+y = np.linspace(-30, 30, 100)
+gradient_descent_two_variables_process(f, x, y, [0.5, 20], 0.1, 0.00001, 100)
