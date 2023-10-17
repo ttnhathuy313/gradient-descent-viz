@@ -3,23 +3,6 @@ from sympy import Symbol, sin
 import numpy as np
 
 
-class Function:
-    def __init__(self):
-        self.x = Symbol('x')
-        self.function = self.x ** 2 + sin(5 * self.x) + 1
-        self.derivative = self.function.diff(self.x)
-    
-    # Calculate f(point)
-    def value(self, point):
-        f = lambdify(self.x, self.function, 'numpy')
-        return f(point)
-    
-    # Calculate f'(point)
-    def deriv(self, point):
-        f = lambdify(self.x, self.derivative, 'numpy')
-        return f(point)
-
-
 class TwoVariableFunction:
     def __init__(self):
         self.x = Symbol('x')

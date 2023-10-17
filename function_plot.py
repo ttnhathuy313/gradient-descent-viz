@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from math_function import Function, TwoVariableFunction
 
 # Plot the function
 def plot_function(f, x):
@@ -46,7 +45,7 @@ def plot_function_two_variables(f, x, y):
     plt.colorbar()
     plt.show()
 
-def plot_changes_two_variables(f, x, y, old_x, old_y, new_x, new_y, title='', show=False):
+def plot_changes_two_variables(f, x, y, old_x, old_y, new_x, new_y, id, title='', show=False):
     # plot the function
     X, Y = np.meshgrid(x, y)
     Z = f.value(X, Y)
@@ -62,7 +61,7 @@ def plot_changes_two_variables(f, x, y, old_x, old_y, new_x, new_y, title='', sh
              [min(max(old_y, y[0]), y[-1]), min(max(new_y, y[0]), y[-1])], 'yellow')
 
     # Save the plot
-    plt.savefig('./graphs/' + title + '.png')
+    plt.savefig('./graphs/' + str(id) + '.png')
     if (show):
         plt.show()
 

@@ -2,16 +2,6 @@
 
 Step 1: Run `pip install -r ./requirements.txt` (Make sure that the terminal is at the folder address)
 
-Step 2: Run `gradient_descent.py`
+Step 2: Run `gradient_descent.py`, you will see the gradient descent process of fixed step size, Wolfe's condition, and backtrack approach. You can always zoom in the Matplotlib graph to see more clear.
 
-Step 3: Open `animation.gif` to see the gradient descent process!
-
-Step 4: Try to learn something from it
-
-## What have I done?
-
-You are given the class for 2-variable function. I also provide some code to plot the graph as a 2D contour graph (kindly find in `function_plot.py`).
-
-## What do you need to do?
-
-Implement gradient descent for this function and create something similar to animation.gif
+Step 3: Open `_____.gif` to see the gradient descent process!
